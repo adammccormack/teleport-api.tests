@@ -25,7 +25,11 @@ namespace teleport_api.tests
         [InlineData("https://api.teleport.org/api/urban_areas/slug:lagos/scores/", "lagos")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:nairobi/scores/", "nairobi")]
 
-
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:doha/scores/", "doha")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:manila/scores/", "manila")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:taipei/scores/", "taipei")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:hong-kong/scores/", "hong-kong")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:tokyo/scores/", "tokyo")]
 
         public async Task LoadScores_ShouldReturnScores_WhenCalledWithValidInput(string url, string city)
         {
@@ -52,6 +56,12 @@ namespace teleport_api.tests
         [InlineData("https://api.teleport.org/api/urban_areas/slug:casablanca/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:lagos/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:nairobi/scores/")]
+
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:doha/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:manila/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:taipei/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:hong-kong/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:tokyo/scores/")]
 
         public async Task LoadScores_ShouldThrowException_WhenCalledWithInvalidInput(string url)
         {
