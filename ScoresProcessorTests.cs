@@ -38,6 +38,7 @@ namespace teleport_api.tests
         [InlineData("https://api.teleport.org/api/urban_areas/slug:new-york/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:washington-dc/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:miami/scores/")]
+
         public async Task LoadScores_ShouldThrowException_WhenCalledWithInvalidInput(string url)
         {
             // Arrange
