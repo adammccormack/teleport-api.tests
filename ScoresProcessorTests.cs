@@ -48,6 +48,7 @@ namespace teleport_api.tests
         [InlineData("https://api.teleport.org/api/urban_areas/slug:lille/scores/", "lille")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:naples/scores/", "naples")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:vilnius/scores/", "vilnius")]
+
         public async Task LoadScores_ShouldReturnScores_WhenCalledWithValidInput(string url, string city)
         {
             // Arrange
@@ -97,6 +98,7 @@ namespace teleport_api.tests
         [InlineData("https://api.teleport.org/api/urban_areas/slug:lille/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:naples/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:vilnius/scores/")]
+
         public async Task LoadScores_ShouldThrowException_WhenCalledWithInvalidInput(string url)
         {
             // Arrange
