@@ -54,7 +54,7 @@ namespace teleport_api.tests
             ApiHelper.InitializeClient();
 
             // Act
-            var scores = await ScoresProcessor.NorthAmerica.LoadScoresByCity(city);
+            var scores = await ScoresProcessor.LoadScores(url);
 
             // Assert
             Assert.NotNull(scores);
@@ -103,10 +103,10 @@ namespace teleport_api.tests
             ApiHelper.InitializeClient();
 
             // Act
-            Func<Task> act = async () => await ScoresProcessor.NorthAmerica.LoadScoresByCity("invalid-city");
+            Func<Task> act = async () => await ScoresProcessor.LoadScores("invalid-city");
 
             // Assert
-            Exception ex = await Assert.ThrowsAsync<Exception>(() => ScoresProcessor.NorthAmerica.LoadScoresByCity("invalid-city"));
+            Exception ex = await Assert.ThrowsAsync<Exception>(() => ScoresProcessor.LoadScores("invalid-city"));
         }
     }
 }
