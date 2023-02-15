@@ -13,7 +13,6 @@
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/teleport-api.tests.runtimeconfig.json
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/teleport-api.tests.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/teleport-api.tests.pdb
-/Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Castle.Core.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Humanizer.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/System.Net.Http.Formatting.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -71,7 +70,6 @@
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Mono.TextTemplating.dll
-/Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Moq.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/Newtonsoft.Json.Bson.dll
 /Users/m/Projects/teleport-api.tests/bin/Debug/net7.0/NuGet.Common.dll
