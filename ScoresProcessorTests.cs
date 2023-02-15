@@ -1,9 +1,6 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
 using Newtonsoft.Json;
 using Xunit;
-using Moq;
 using DemoLibrary2.Models;
 using DemoLibrary2;
 using DemoLibrary;
@@ -14,40 +11,40 @@ namespace teleport_api.tests
     {
         [Theory]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:boston/scores/", "boston")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:las-vegas/scores/", "las-vegas")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:toronto/scores/", "toronto")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:new-york/scores/", "new-york")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:washington-dc/scores/", "washington-dc")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:miami/scores/", "miami")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:vancouver/scores/", "vancouver")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:montreal/scores/", "montreal")]
 
         [InlineData("https://api.teleport.org/api/urban_areas/slug:cairo/scores/", "cairo")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:cape-town/scores/", "cape-town")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:casablanca/scores/", "casablanca")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:lagos/scores/", "lagos")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:johannesburg/scores/", "johannesburg")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:tunis/scores/", "tunis")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:nairobi/scores/", "nairobi")]
 
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:doha/scores/", "doha")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:manila/scores/", "manila")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:taipei/scores/", "taipei")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:singapore/scores/", "singapore")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:seoul/scores/", "seoul")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:osaka/scores/", "osaka")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:hong-kong/scores/", "hong-kong")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:tokyo/scores/", "tokyo")]
 
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:bogota/scores/", "doha")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:caracas/scores/", "manila")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:medellin/scores/", "taipei")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:sao-paulo/scores/", "sao-paulo")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:porto-alegre/scores/", "porto-alegre")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:bogota/scores/", "bogota")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:santiago/scores/", "santiago")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:medellin/scores/", "medellin")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:montevideo/scores/", "montevideo")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:buenos-aires/scores/", "buenos-aires")]
 
         [InlineData("https://api.teleport.org/api/urban_areas/slug:wellington/scores/", "wellington")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:adelaide/scores/", "adelaide")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:christ-church/scores/", "christ-church")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:sydney/scores/", "sydney")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:melbourne/scores/", "melbourne")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:brisbane/scores/", "brisbane")]
 
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:aarhus/scores/", "aarhus")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:chisinau/scores/", "chisinau")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:lille/scores/", "lille")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:naples/scores/", "naples")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:vilnius/scores/", "vilnius")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:munich/scores/", "munich")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:berlin/scores/", "berlin")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:amsterdam/scores/", "amsterdam")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:london/scores/", "london")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:copenhagen/scores/", "copenhagen")]
 
         public async Task LoadScores_ShouldReturnScores_WhenCalledWithValidInput(string url, string city)
         {
@@ -64,40 +61,40 @@ namespace teleport_api.tests
 
         [Theory]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:boston/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:las-vegas/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:toronto/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:new-york/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:washington-dc/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:miami/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:vancouver/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:montreal/scores/")]
 
         [InlineData("https://api.teleport.org/api/urban_areas/slug:cairo/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:cape-town/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:casablanca/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:lagos/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:johannesburg/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:tunis/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:nairobi/scores/")]
 
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:doha/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:manila/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:taipei/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:singapore/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:seoul/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:osaka/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:hong-kong/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:tokyo/scores/")]
 
         [InlineData("https://api.teleport.org/api/urban_areas/slug:bogota/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:caracas/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:santiago/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:medellin/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:sao-paulo/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:porto-alegre/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:montevideo/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:buenos-aires/scores/")]
 
         [InlineData("https://api.teleport.org/api/urban_areas/slug:wellington/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:adelaide/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:christ-church/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:sydney/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:melbourne/scores/")]
         [InlineData("https://api.teleport.org/api/urban_areas/slug:brisbane/scores/")]
 
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:aarhus/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:chisinau/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:lille/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:naples/scores/")]
-        [InlineData("https://api.teleport.org/api/urban_areas/slug:vilnius/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:munich/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:berlin/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:amsterdam/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:london/scores/")]
+        [InlineData("https://api.teleport.org/api/urban_areas/slug:copenhagen/scores/")]
 
         public async Task LoadScores_ShouldThrowException_WhenCalledWithInvalidInput(string url)
         {

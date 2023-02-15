@@ -1,9 +1,6 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
 using Newtonsoft.Json;
 using Xunit;
-using Moq;
 using DemoLibrary2.Models;
 using DemoLibrary2;
 using DemoLibrary;
