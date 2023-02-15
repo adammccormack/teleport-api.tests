@@ -1,10 +1,7 @@
-﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
 using DemoLibrary;
 using DemoLibrary2;
 using DemoLibrary2.Models;
-using Moq;
 using Newtonsoft.Json;
 using teleport_api.tests;
 using Xunit;
